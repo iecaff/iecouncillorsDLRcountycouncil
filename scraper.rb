@@ -33,7 +33,10 @@ con_table = front_page.search("table[summary='List od Dun Laoghaire Rathdown Cou
 
 con_table.each_with_index do |con_string,i|
   con_items = con_string.search('//text()')
-  puts con_items
+  puts 'working'
+  con_items.each do |con_text|
+    puts con_text
+  end
 end
 
 
