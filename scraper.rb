@@ -44,8 +44,8 @@ con_details = con_table.collect do |con_row|
     [:number, 'td[5]/a/text()'],
     [:views, 'td[6]/text()'],
   ].each do |name, xpath|
-    detail[name] = con_row.at_xpath(xpath).to_s.strip
+    detail[name] = con_row.at(xpath).to_s.strip
   end
   con_detail
 end
-puts con_details
+pp con_details
