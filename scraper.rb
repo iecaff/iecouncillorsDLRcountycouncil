@@ -29,8 +29,8 @@ con_address = ''
 con_info = ['Area:','Ward:','Elected:','Party:','Address:','Email:','Phone:','Mobile:','Fax:',nil]
 
 front_page = mechanize.get('http://www.dlrcoco.ie/aboutus/councilbusiness/listofcouncillors/')
-con_table = front_page.search("table[summary='List od Dun Laoghaire Rathdown Councillors in Alphabetical order']/tr")
-
+con_nodes = front_page.search("table[summary='List od Dun Laoghaire Rathdown Councillors in Alphabetical order']/tr")
+con_table=con_nodes.map(&:tr)
 con_table.each_with_index do |con_string,i|
   con_items = con_string.search('//text()')
   puts 'working'
