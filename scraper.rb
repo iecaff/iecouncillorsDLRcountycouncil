@@ -37,12 +37,11 @@ con_table = front_page.search("table[summary='List od Dun Laoghaire Rathdown Cou
 con_details = con_table.collect do |con_row|
   con_detail = {}
   [
-    [:title, 'td[3]/div[1]/a/text()'],
-    [:name, 'td[3]/div[2]/span/a/text()'],
-    [:date, 'td[4]/text()'],
-    [:time, 'td[4]/span/text()'],
-    [:number, 'td[5]/a/text()'],
-    [:views, 'td[6]/text()'],
+    [:image, 'td[1]/div[1]/img/src()'],
+    [:name, 'td[2]//text()'],
+    [:phone, 'td[3]//text()'],
+    [:email, 'td[4]//text()'],
+    [:area, 'td[5]//text()'],
   ].each do |name, xpath|
     detail[name] = con_row.at(xpath).to_s.strip
   end
