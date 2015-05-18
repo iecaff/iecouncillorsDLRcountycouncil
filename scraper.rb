@@ -31,7 +31,7 @@ con_info = ['Area:','Ward:','Elected:','Party:','Address:','Email:','Phone:','Mo
 front_page = mechanize.get('http://www.dlrcoco.ie/aboutus/councilbusiness/listofcouncillors/')
 con_table = front_page.search("table[summary='List od Dun Laoghaire Rathdown Councillors in Alphabetical order']/tr")
 
-con_text.each_with_index do |con_string,i|
+con_table.each_with_index do |con_string,i|
   con_items = con_string.search('//text()')
   puts con_items
 end
